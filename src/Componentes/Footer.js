@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Footer extends Component{
     render(){
         return(
-                    
-          <div class="container my-5">
+          <React.Fragment>
+            <div class="container my-5">
             
             <footer
                     class="text-center text-lg-start text-white"
@@ -143,6 +143,9 @@ class Footer extends Component{
             </footer>
             
           </div>
+          
+          </React.Fragment>
+                    
           
 
 

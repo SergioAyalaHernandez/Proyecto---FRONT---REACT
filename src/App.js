@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './Componentes/Footer';
 import Menu from './Componentes/Menu';
 import Rutas from './Rutas'
 
@@ -15,7 +16,7 @@ function App() {
         
       </body>
       <footer>
-      <Menu/>
+      <Footer/>
       </footer>
     </div>
   );
