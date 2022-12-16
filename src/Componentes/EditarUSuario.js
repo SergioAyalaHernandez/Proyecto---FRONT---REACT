@@ -1,40 +1,101 @@
 import React, { Component } from "react";
+import { Navigate } from "react-router-dom";
+import axios from "axios";
 
 class EditarUsuario extends Component{
+
+    constructor(props){
+        super(props);
+        this.path = window.location.pathname;
+        console.log(this.path);
+        this.url=this.path.split("/usuarios/editarusuario/");
+        this.usuarioId = this.url[1];
+        this.getUsuario(this.usuarioId);
+    };
+    
+    path = null;
+    url =[];
+    usuarioId = null;
+    nombre = React.createRef();
+    surname = React.createRef();
+    mail = React.createRef();
+    pass = React.createRef();
+    id = React.createRef();
+    role = React.createRef();
+
+    state = {
+        usuario:[],
+        status:null
+    };
+
+    getUsuario = (id) => {
+        axios.get("http://localhost:3000/api/usuario/mostrar/"+id).then(res =>{
+                this.setState({                    
+                    usuario:res.data.usuario
+                });
+                console.log(res.data.usuario);
+
+                
+            })
+    };
+    actualizarUsuario = (e) =>{
+        e.preventDefault();
+        var usuario = {
+            nombre:this.nombre.current.value,
+            surname:this.surname.current.value,
+            email:this.mail.current.value,
+            pass:this.pass.current.value,
+
+        }
+        console.log(this.usuarioId)
+        console.log(usuario)
+        axios.put("http://localhost:3000/api/usuario/update/"+this.usuarioId,usuario).then(
+            res =>{
+                this.setState({
+                    status:"success"
+                })
+            }).catch(function(error){
+                console.log(error)
+            })
+    }
+
     render(){
+        if(this.state.status ==="success"){
+            return <Navigate to ="/usuarios" />
+        }
         return(
+            
             //<React.Fragment></React.Fragment> <----- esto es opcional cuando no se requiere etiqueta
             <React.Fragment>
-                <div class="containerEdit">
-                    <form>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">ID del cliente</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <div className="containerEdit">
+                    <form onSubmit={this.actualizarUsuario}>
+                    <div className="mb-3">
+                        <label for="exampleInputEmail1" className="form-label">ID del cliente</label>
+                        <input type="text" className="form-control" id="id" defaultValue={this.state.usuario._id} ref={this.id}/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Nombre</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Nombre</label>
+                        <input type="text" className="form-control" id="nombre"defaultValue={this.state.usuario.nombre} ref={this.nombre}/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Apellido</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Apellido</label>
+                        <input type="text" className="form-control" id="3"defaultValue={this.state.usuario.surname} ref={this.surname}/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Email</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Email</label>
+                        <input type="email" className="form-control" id="4"defaultValue={this.state.usuario.email} ref={this.mail} aria-describedby="emailHelp"/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Contraseña</label>
+                        <input type="text" className="form-control" id="5"defaultValue={this.state.usuario.pass} ref={this.pass}/>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Rol de usuario</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"/>
+                    <div className="mb-3">
+                        <label for="exampleInputPassword1" className="form-label">Rol de usuario</label>
+                        <input type="text" className="form-control" id="6"defaultValue={this.state.usuario.role} ref={this.role}/>
                     </div>
-                    <button class="btn2 btn-primary">
+                    <button className="btn2 btn-primary">
                         <span>Actualizar</span>
-                        <i class="ri-home-line icon"></i>
+                        <i className="ri-home-line icon"></i>
                     </button>
                     </form>   
                 </div>

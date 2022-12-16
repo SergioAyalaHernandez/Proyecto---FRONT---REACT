@@ -1,11 +1,14 @@
 import axios from "axios";
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
+import swal from "sweetalert";
+
 
 class Cars extends Component{
 
     state = {
-        car:[]
+        car:[],
+        state:null
     }
 
     componentDidMount(){
@@ -21,6 +24,36 @@ class Cars extends Component{
             }).catch (error =>{
                 console.log(error)
             })
+    }
+    eliminarUsuario = (id) => {
+        console.log(id)
+        swal({
+            title: "Estas seguro de eliminarlo?",
+            text: "Si lo eliminas, no volveras a tener su información!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                axios.delete("http://localhost:3000/api/car/delete/"+id).then(
+            res => {
+                this.setState({
+                    status:"deleted"
+                });
+
+                window.location.reload(true);
+
+              swal(window.location.reload(true));
+              
+            }).catch (error =>{
+                console.log(error)
+            })
+            } else {
+              swal("No se elimina el vehículo!");
+            }
+          });
+        
     }
     render(){
         return(
@@ -62,7 +95,13 @@ class Cars extends Component{
                                                 <td>{car.link}</td>
                                                 <td>
                                                     <Link to={"editarvehiculo/"+car._id }className="btn btn-success">Editar</Link>
-                                                    <button className="btn btn-danger">Eliminar</button>
+                                                    <button className="btn btn-danger"
+                                                        onClick={
+                                                            () => {
+                                                                this.eliminarUsuario(car._id);
+                                                            }
+                                                        }
+                                                    >Eliminar</button>
                                                 </td>
                                             </tr>
                                         </React.Fragment>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 class Usuarios extends Component{
 
@@ -27,19 +28,30 @@ class Usuarios extends Component{
 
     eliminarUsuario = (id) => {
         console.log(id)
-        axios.delete("http://localhost:3000/api/usuario/delete/"+id).then(
-            res => {
-                this.setState({
-                    status:"deleted"
-                });
-
-                window.location.reload(true);
-                
-                
-
-            }).catch (error =>{
-                console.log(error)
-            })
+        swal({
+            title: "Estas seguro de eliminarlo?",
+            text: "Si lo eliminas, no volveras a tener su información!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              
+              axios.delete("http://localhost:3000/api/usuario/delete/"+id).then(
+                res => {
+                    this.setState({
+                        status:"deleted"
+                    });
+                }).catch (error =>{
+                    console.log(error)
+                })
+                swal(window.location.reload(true));
+            } else {
+              swal("No se elimina el usuario!");
+            }
+          });
+       
     }
 
 
