@@ -4,21 +4,20 @@ class Footer extends Component{
     render(){
         return(
           <React.Fragment>
-            <div class="container my-5">
+            <div className="container my-5">
             
             <footer
-                    class="text-center text-lg-start text-white"
-                    style="background-color: #45526e"
+                    className="text-center text-lg-start text-white"
                     >
               
-              <div class="container p-4 pb-0">
+              <div className="container p-4 pb-0">
                 
-                <section class="">
+                <section className="">
                   
-                  <div class="row">
+                  <div className="row">
                     
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">
+                    <div className="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 className="text-uppercase mb-4 font-weight-bold">
                         Company name
                       </h6>
                       <p>
@@ -28,55 +27,55 @@ class Footer extends Component{
                       </p>
                     </div>
                     
-                    <hr class="w-100 clearfix d-md-none" />
+                    <hr className="w-100 clearfix d-md-none" />
 
                     
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+                    <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h6 className="text-uppercase mb-4 font-weight-bold">Products</h6>
                       <p>
-                        <a class="text-white">MDBootstrap</a>
+                        <a href="/" className="text-white">MDBootstrap</a>
                       </p>
                       <p>
-                        <a class="text-white">MDWordPress</a>
+                        <a href="/" className="text-white">MDWordPress</a>
                       </p>
                       <p>
-                        <a class="text-white">BrandFlow</a>
+                        <a className="text-white">BrandFlow</a>
                       </p>
                       <p>
-                        <a class="text-white">Bootstrap Angular</a>
+                        <a className="text-white">Bootstrap Angular</a>
                       </p>
                     </div>
 
-                    <hr class="w-100 clearfix d-md-none" />
+                    <hr className="w-100 clearfix d-md-none" />
 
                     
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">
+                    <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h6 className="text-uppercase mb-4 font-weight-bold">
                         Useful links
                       </h6>
                       <p>
-                        <a class="text-white">Your Account</a>
+                        <a className="text-white">Your Account</a>
                       </p>
                       <p>
-                        <a class="text-white">Become an Affiliate</a>
+                        <a className="text-white">Become an Affiliate</a>
                       </p>
                       <p>
-                        <a class="text-white">Shipping Rates</a>
+                        <a className="text-white">Shipping Rates</a>
                       </p>
                       <p>
-                        <a class="text-white">Help</a>
+                        <a className="text-white">Help</a>
                       </p>
                     </div>
 
                     
-                    <hr class="w-100 clearfix d-md-none" />
+                    <hr className="w-100 clearfix d-md-none" />
                     
-                      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                      <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
-                      <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                      <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
-                      <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                      <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                      <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                      <p><i className="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+                      <p><i className="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                      <p><i className="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                      <p><i className="fas fa-print mr-3"></i> + 01 234 567 89</p>
                     </div>
                   
                   </div>
@@ -84,17 +83,17 @@ class Footer extends Component{
                 </section>
                 
 
-                <hr class="my-3" />
+                <hr className="my-3" />
 
                 
-                <section class="p-3 pt-0">
-                  <div class="row d-flex align-items-center">
+                <section className="p-3 pt-0">
+                  <div className="row d-flex align-items-center">
                 
-                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                    <div className="col-md-7 col-lg-8 text-center text-md-start">
                 
-                      <div class="p-3">
+                      <div className="p-3">
                         © 2020 Copyright:
-                        <a class="text-white" href="https://mdbootstrap.com/"
+                        <a className="text-white" href="https://mdbootstrap.com/"
                           >MDBootstrap.com</a
                           >
                       </div>
@@ -103,36 +102,36 @@ class Footer extends Component{
                     
 
                     
-                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                    <div className="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
                     
                       <a
-                        className ="btn btn-outline-light btn-floating m-1"
-                        class="text-white"
+                        classNameName ="btn btn-outline-light btn-floating m-1"
+                        className="text-white"
                         role="button"
-                        ><i class="fab fa-facebook-f"></i
+                        ><i className="fab fa-facebook-f"></i
                         ></a>
 
                     
                       <a
-                        classame ="btn btn-outline-light btn-floating m-1"
-                        class="text-white"
+                        classNameame ="btn btn-outline-light btn-floating m-1"
+                        className="text-white"
                         role="button"
-                        ><i class="fab fa-twitter"></i
+                        ><i className="fab fa-twitter"></i
                         ></a>
 
                       
                       <a
-                        className ="btn btn-outline-light btn-floating m-1"
-                        class="text-white"
+                        classNameName ="btn btn-outline-light btn-floating m-1"
+                        className="text-white"
                         role="button"
-                        ><i class="fab fa-google"></i
+                        ><i className="fab fa-google"></i
                         ></a>
 
                       <a
-                        className ="btn btn-outline-light btn-floating m-1"
-                        class="text-white"
+                        classNameName ="btn btn-outline-light btn-floating m-1"
+                        className="text-white"
                         role="button"
-                        ><i class="fab fa-instagram"></i
+                        ><i className="fab fa-instagram"></i
                         ></a>
                     </div>
                     

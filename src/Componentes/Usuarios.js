@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import swal from "sweetalert";
 
 class Usuarios extends Component{
 
@@ -35,7 +36,9 @@ class Usuarios extends Component{
 
                 window.location.reload(true);
                 
-                
+                swal(
+                    "Usuario Eliminado"
+                )
 
             }).catch (error =>{
                 console.log(error)
