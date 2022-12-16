@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 class EditarVehiculo extends Component{
     constructor(props){
@@ -61,7 +62,7 @@ class EditarVehiculo extends Component{
     }
     render(){
         if(this.state.status ==="success"){
-            return <Navigate to ="/usuarios" />
+            return <Navigate to ="/cars" />
         }
         return(
            
