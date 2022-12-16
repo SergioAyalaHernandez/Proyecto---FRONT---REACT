@@ -1,6 +1,11 @@
-.App {
+.App{
   text-align: center;
+  background-color: #d3dbdd;
 }
+.App .fondoGrande{
+  background-color: #d3dbdd;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -15,7 +20,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,10 +28,262 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.tableUsuarios{
+  max-width: 90%;
+  margin-left: 5%;
+  width: auto;
+  border-color:#212529;
+  border-width: 0.5px 0.5px 5px 5px;
+  border-style: solid;
+  margin-bottom: 5%;
+  background-image:
+    linear-gradient(
+      315deg,#d3dbdd,#8d8b87
+    );
+}
+.btn{
+  margin-right: 2%;
+  min-width:  100px ;
+}
 
 .App-link {
   color: #61dafb;
 }
+.navbar{
+  width: auto;
+  height: auto;
+  position: relative;
+  background-image:
+    linear-gradient(
+      315deg,#d3dbdd,#f0c540
+    );
+  border-top: 50px;
+  border-color:#212529;
+  border-width: 0px 0px 5px 5px;
+  border-style: solid;
+}
+
+.containerEdit{
+  border-color:#212529;
+  border-width: 0px 0px 5px 5px;
+  border-style: solid;
+  width: auto;
+  height: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  max-width: 400px;
+  max-height: auto;
+  margin: auto;
+  border-color: #021c36;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 3%;
+  padding-bottom: 1.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-top: 50px;
+  border-color:#212529;
+  border-width: 1px 1px 5px 5px;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: #f0c540;
+}
+
+.inicioL{
+  background-color:   #eeeeee;
+  background-image: url("https://img.freepik.com/foto-gratis/carretera-vacia-rodeada-colinas-cielo-nublado-atardecer_181624-15528.jpg?w=740&t=st=1670958792~exp=1670959392~hmac=ff1413ee802bba91b6bab47aa05c876256b09a167d4e9603c5ba4de61eb430de");
+  max-width: 100%;
+  max-height: 100vh;
+  height: auto;
+  width: auto;
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  margin-top: 1%;
+  margin-bottom: 2%;
+  border-color:#212529;
+  border-width: 0.01px 0.01px 5px 5px;
+  border-style: solid;
+}
+
+.card{
+  max-width: 300px;
+  max-height:500px;
+  margin-bottom: 8%;
+  border-color:#212529;
+  border-width: 0.5px 0.5px 5px 5px;
+  border-style: solid;
+}
+
+.btn2{
+  position: relative;
+  width: 100px;
+  height: 50px;
+  font-size: 10px;
+  background-color: #202231;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: width .5s, border-radius .5s;
+
+}
+
+.btn2 *{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: opacity .005s;
+}
+.icon{
+  opacity: 0;
+}
+
+.btn2:focus{
+  width: 30px;
+  background-color: #c04455;
+  border-radius: 50%;
+  transform:scale(150%);
+}
+
+
+.btn2:hover{
+  transform:scale(130%);
+  transition: 1.1s;
+}
+
+.btn2:focus .text {
+  opacity: 0;
+}
+
+.btn2:focus .icon{
+  opacity: 1;
+  transition-delay: .005s;
+}
+.btn{
+  margin-top: 10%;
+}
+
+.tittle{
+  background-image:
+    linear-gradient(
+      315deg,#d3dbdd,#f0c540
+    );
+  color: #212529;
+  border-color:#212529;
+  border-width: 0.5px 0.5px 5px 5px;
+  border-style: solid;
+  margin-bottom: 2%;
+  margin-top: 1%;
+
+}
+
+.tittles2{
+  color: #212529;
+  border-color: #212529;
+  margin-bottom: 5%;
+}
+.textInicio{
+  margin-left:5% ;
+}
+
+.table{
+  color: #212529;
+  border-color: #212529;
+  border-style: #212529;
+}
+.table thead{
+  background-color: #212529;
+  color: white;
+}
+.row{
+  margin-bottom: 5%;
+  margin-left: 5%;
+}
+
+.flip-card{
+  background-color: transparent;
+  width: 300px;
+  height: 400px; 
+  margin-right: 10px;
+}
+
+.flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d ;
+}
+
+.flip-card:hover .flip-card-inner:hover{
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  transform: rotate(100px);
+}
+.flip-card-front{
+  background-image:
+    linear-gradient(
+      45deg,#d3dbdd,#f0c540
+    );
+    margin-left: 1%;
+}
+.flip-card-front{
+  width: 300px;
+  border-color:#212529;
+  border-width: 0.5px 0.5px 5px 5px;
+  border-style: solid;
+  margin-right: 5%;
+}
+.flip-card-back{
+
+  background-image:
+    linear-gradient(
+      315deg,#d3dbdd,#f0c540
+    );
+  color: #ffffff;
+
+  transform: rotateY(180deg);
+  border-color:#212529;
+  border-width: 0.5px 0.5px 5px 5px;
+  border-style: solid;
+  
+}
+.flip-card-front img{
+  margin-top: 20%;  
+}
+.flip-card-back img{
+
+  width: 240px;
+  margin-top: 15%;  
+}
+.flip-card-back h3 {
+  margin-bottom: 0.3rem;
+  color: black;
+}
+.flip-card-back h1{
+  margin: 0;
+  color: black;
+}
+
 
 @keyframes App-logo-spin {
   from {

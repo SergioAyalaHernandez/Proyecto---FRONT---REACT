@@ -1,0 +1,108 @@
+import React, { Component } from "react";
+import {Link} from "react-router-dom";
+import axios from "axios";
+
+class Usuarios extends Component{
+
+    state = {
+        usuarios:[],
+        state:null
+    }
+
+    componentWillMount() {
+        this.getUsuarios();
+    }
+
+    getUsuarios = () =>{
+        axios.get("http://localhost:3000/api/usuario/listar").then(
+            res => {
+                console.log(res.data.doc);
+                this.setState({
+                    usuarios:res.data.doc
+                });
+            }).catch (error =>{
+                console.log(error)
+            })
+    };
+
+    eliminarUsuario = (id) => {
+        console.log(id)
+        axios.delete("http://localhost:3000/api/usuario/delete/"+id).then(
+            res => {
+                this.setState({
+                    status:"deleted"
+                });
+
+                window.location.reload(true);
+                
+                
+
+            }).catch (error =>{
+                console.log(error)
+            })
+    }
+
+
+    render(){
+        return(
+            //<React.Fragment></React.Fragment> <----- esto es opcional cuando no se requiere etiqueta
+            <React.Fragment>
+
+               
+                <div class ="tittle">
+
+                    <h3>Listado de usuarios</h3>     
+
+                </div>
+                <div class="tableUsuarios">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDO</th>
+                            <th scope="col">EMAIL</th>
+                            <th scope="col">CONTRASEÑA</th>
+                            <th scope="col">IMAGEN</th>
+                            <th scope="col">ROL</th>
+                            <th scope="col">ACCIÓN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                this.state.usuarios.map((usuario)=>{
+                                    return(
+                                        <React.Fragment>
+                                            <tr>
+                                                <td>{usuario._id}</td>
+                                                <td>{usuario.nombre}</td>
+                                                <td>{usuario.surname}</td>
+                                                <td>{usuario.email}</td>
+                                                <td>{usuario.pass}</td>
+                                                <td>{usuario.image}</td>
+                                                <td>{usuario.role}</td>
+                                                <td>
+                                                    <Link to={"editarusuario/"+usuario._id}className="btn btn-success">Editar</Link>
+                                                    <button className="btn btn-danger"
+                                                        onClick={
+                                                            () => {
+                                                                this.eliminarUsuario(usuario._id);
+                                                            }
+                                                        }
+                                                    >Delete</button>
+                                                </td>
+                                            </tr>
+                                        </React.Fragment>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            
+            </React.Fragment>
+            );      
+    }    
+}
+
+export default Usuarios;
