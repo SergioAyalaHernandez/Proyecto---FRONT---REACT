@@ -61,6 +61,9 @@ class EditarVehiculo extends Component{
     }
     render(){
         return(
+            if(this.state.status ==="success"){
+                return <Navigate to ="/usuarios" />
+            }
             //<React.Fragment></React.Fragment> <----- esto es opcional cuando no se requiere etiqueta
             <React.Fragment>
                 <div class="containerEdit">
