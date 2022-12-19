@@ -4,7 +4,7 @@ class Footer extends Component{
     render(){
         return(
           <React.Fragment>
-            <div className="container my-5">
+            <div className="containerLs my-5">
             
             <footer
                     className="text-center text-lg-start text-white"

@@ -391,6 +391,7 @@
   border-color:#212529;
   border-width: 0.5px 0.5px 5px 5px;
   border-style: solid;
+  
 }
 .menuRes{
   border-color:#212529;
@@ -407,6 +408,10 @@
   flex-wrap: wrap;
   min-height: 100%;
   height: auto;
+  background-image:
+  linear-gradient(
+    45deg,#d3dbdd,#f0c540
+  );
 }
 
 .cajals{
@@ -455,6 +460,12 @@
   width: 250px;
   float: inline-end;
   margin-top: 5%;
+}
+
+.containerLs{
+  background-color: #202231;
+  width: auto;
+  height: auto;
 }
 
 

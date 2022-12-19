@@ -17,7 +17,7 @@ function App() {
       </body>
       <footer>
       <div class="footer">
-      <Footer/>
+        <Footer/>
       </div>
       </footer>
     </div>
