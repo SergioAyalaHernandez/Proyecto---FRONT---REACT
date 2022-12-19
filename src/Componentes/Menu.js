@@ -1,4 +1,7 @@
 import React from "react";
+import { LoginButton } from "./Login";
+import { LogoutButton } from "./Logout";
+import { Profile } from "./Profile";
 
 class Menu extends React.Component{
   
@@ -34,9 +37,9 @@ class Menu extends React.Component{
                     Reservas
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/">Reservar</a></li>
+                    <li><a class="dropdown-item" href="/agregarreserva">Reservar</a></li>
                     <li><hr class="dropdown-divider"/></li>
-                    <li><a class="dropdown-item" href="/">Reservas realizadas</a></li>
+                    <li><a class="dropdown-item" href="/reservas">Reservas realizadas</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -60,12 +63,12 @@ class Menu extends React.Component{
                     <li><a class="dropdown-item" href="/">Contacto</a></li>
                     <li><hr class="dropdown-divider"/></li>
                     <li><a class="dropdown-item" href="/">Nosotros</a></li>
-                    <li><hr class="dropdown-divider"/></li>
-                    <li><a class="dropdown-item" href="/cars">Listado vehículos</a></li>
                   </ul>
                 </li>
-
+              
               </ul>
+              <LoginButton/>
+              <Profile />
             </div>
           </div>
         </nav>

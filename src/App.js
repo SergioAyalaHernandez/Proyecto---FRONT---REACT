@@ -15,7 +15,9 @@ function App() {
         
       </body>
       <footer>
+      <div class="footer">
       <Menu/>
+      </div>
       </footer>
     </div>
   );

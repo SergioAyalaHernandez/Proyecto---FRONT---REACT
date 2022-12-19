@@ -8,6 +8,8 @@ import Cars from "./Componentes/Cars";
 import EditarVehiculo from "./Componentes/EditarVehiculo";
 import GuardarUsuario from "./Componentes/GuardarUSuario";
 import GuardarCarro from "./Componentes/GuardarCarro";
+import AgregarReserva from "./Componentes/AgregarReserva";
+import Reservas from "./Componentes/Reservas";
 
 
 class Routeres extends Component{
@@ -23,6 +25,8 @@ class Routeres extends Component{
                     <Route path="/usuario/guardarusuario/" element = {<GuardarUsuario/>} />
                     <Route path="/cars" element = {<Cars/>} />
                     <Route path="/guardarcarro" element = {<GuardarCarro/>} />
+                    <Route path="/agregarreserva/:id/:id" element = {<AgregarReserva/>} />
+                    <Route path="/reservas/" element = {<Reservas/>} />
                 </Routes>
             </BrowserRouter>
         )

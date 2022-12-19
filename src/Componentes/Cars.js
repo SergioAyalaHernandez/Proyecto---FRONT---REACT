@@ -94,7 +94,7 @@ class Cars extends Component{
                                                 <td>{car.payDay}</td>
                                                 <td>{car.link}</td>
                                                 <td>
-                                                    <Link to={"editarvehiculo/"+car._id }className="btn btn-success">Editar</Link>
+                                                    <Link to={"editarvehiculo/"+car._id}className="btn btn-success">Editar</Link>
                                                     <button className="btn btn-danger"
                                                         onClick={
                                                             () => {
@@ -112,34 +112,7 @@ class Cars extends Component{
                     </table>
                 </div>
                 <div class="row row-cols-3 row-cols-md-3 g-3">
-                    {
-                        this.state.car.map((car)=>{
-                            
-                            return(
-                                
-                                <React.Fragment>
-                                    <div class="flip-card">
-                                        <div class="flip-card-inner">
-                                            <div class="flip-card-front">
-                                                <img src={car.link} class="card-img-top" alt="..."/>
-                                                <h4>{car.brand}</h4>
-                                                <h5>{car.name}</h5>
-                                                <h6>{car.description}</h6>
-                                            </div>
-                                            <div class="flip-card-back">
-                                                <img src={car.link} class="card-img-top" alt="..."/>
-                                                <h3>Desde</h3>
-                                                <h1>${car.payDay/1000}/ Día</h1>
-                                                <Link to={"reservas/"}className="btn btn-light">Reservar</Link>
-
-                                            </div>
-                                        </div>
-                                    </div> 
-                                </React.Fragment>
-                            )
-                        })
-                    }
-                       
+                   
                 </div>
             </React.Fragment>
             );      

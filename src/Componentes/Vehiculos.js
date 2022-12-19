@@ -46,7 +46,7 @@ class Vehiculos extends Component{
                                                 <img src={car.link} class="card-img-top" alt="..."/>
                                                 <h3>Desde</h3>
                                                 <h1>${car.payDay/1000}/ Día</h1>
-                                                <Link to={"reservas/"}className="btn btn-light">Reservar</Link>
+                                                <Link to={"agregarreserva/"+car._id+"/"+car._id}className="btn btn-light">Agregar Reserva</Link>
 
                                             </div>
                                         </div>
