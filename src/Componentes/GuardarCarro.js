@@ -34,7 +34,7 @@ class GuardarCarro extends Component{
         console.log(this.name.current.value);
         this.changeState();
         console.log(this.state.car);
-        axios.post("http://localhost:3000/api/car/save",this.state.car).then(res=>{ 
+        axios.post("https://proyecto-back-nodejs-production.up.railway.app/api/car/save",this.state.car).then(res=>{ 
             this.setState({
                 status:"success"
             })

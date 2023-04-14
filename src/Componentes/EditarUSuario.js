@@ -29,7 +29,7 @@ class EditarUsuario extends Component{
     };
 
     getUsuario = (id) => {
-        axios.get("http://localhost:3000/api/usuario/mostrar/"+id).then(res =>{
+        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/mostrar/"+id).then(res =>{
                 this.setState({                    
                     usuario:res.data.usuario
                 });
@@ -49,7 +49,7 @@ class EditarUsuario extends Component{
         }
         console.log(this.usuarioId)
         console.log(usuario)
-        axios.put("http://localhost:3000/api/usuario/update/"+this.usuarioId,usuario).then(
+        axios.put("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/update/"+this.usuarioId,usuario).then(
             res =>{
                 this.setState({
                     status:"success"
