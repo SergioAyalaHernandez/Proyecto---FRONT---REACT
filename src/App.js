@@ -1,5 +1,6 @@
 import './App.css';
 import Footer from './Componentes/Footer';
+import{BrowserRouter as Router, Switch, Route, Link}from "react-router-dom"
 import Menu from './Componentes/Menu';
 import Rutas from './Rutas'
 

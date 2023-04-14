@@ -13,7 +13,7 @@ class Vehiculos extends Component{
     }
 
     getCar = () =>{
-        axios.get("http://localhost:3000/api/car/listar").then(
+        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/car/listar").then(
             res => {
                 console.log(res.data.doc);
                 this.setState({
