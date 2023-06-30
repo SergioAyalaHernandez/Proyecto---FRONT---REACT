@@ -32,7 +32,7 @@ class EditarVehiculo extends Component{
     };
 
     getCar = (id) => {
-        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/car/mostrar/"+id).then(res =>{
+        axios.get("http://34.16.137.107:80/api/car/mostrar/"+id).then(res =>{
                 this.setState({                    
                     car:res.data.usuario,
                     car2:res.data.usuario

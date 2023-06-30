@@ -15,7 +15,7 @@ class Usuarios extends Component{
     }
 
     getUsuarios = () =>{
-        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/listar").then(
+        axios.get("http://34.16.137.107:80//api/usuario/listar").then(
             res => {
                 console.log(res.data.doc);
                 this.setState({

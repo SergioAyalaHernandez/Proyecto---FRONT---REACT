@@ -32,7 +32,7 @@ class GuardarUsuario extends Component{
         console.log(this.nombre.current.value);
         this.changeState();
         console.log(this.state.usuario);
-        axios.post("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/save",this.state.usuario).then(res=>{ 
+        axios.post("http://34.16.137.107:80//api/usuario/save",this.state.usuario).then(res=>{ 
             this.setState({
                 status:"success"
             })

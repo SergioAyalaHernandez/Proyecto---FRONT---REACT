@@ -16,7 +16,7 @@ class Cars extends Component{
     }
 
     getCar = () =>{
-        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/car/listar").then(res => {
+        axios.get("http://34.16.137.107:80//api/car/listar").then(res => {
                 console.log(res.data.doc);
                 this.setState({
                     car:res.data.doc
@@ -36,7 +36,7 @@ class Cars extends Component{
           })
           .then((willDelete) => {
             if (willDelete) {
-                axios.delete("https://proyecto-back-nodejs-production.up.railway.app/api/car/delete/"+id).then(
+                axios.delete("http://34.16.137.107:80//api/car/delete/"+id).then(
             res => {
                 this.setState({
                     status:"deleted"

@@ -34,7 +34,7 @@ class AgregarReserva extends Component{
        };
 
     getCar = (id) => {
-        axios.get("https://proyecto-back-nodejs-production.up.railway.app/api/car/mostrar/"+id).then(res =>{
+        axios.get("http://34.16.137.107:80/"+id).then(res =>{
                 this.setState({                    
                     car:res.data.usuario,
                     car2:res.data.usuario
@@ -57,7 +57,7 @@ class AgregarReserva extends Component{
 
         }
 
-        axios.put("https://proyecto-back-nodejs-production.up.railway.app/api/car/update/"+this.carId,car).then(
+        axios.put("http://34.16.137.107:80/"+this.carId,car).then(
             res =>{
                 this.setState({
                     status:"success"

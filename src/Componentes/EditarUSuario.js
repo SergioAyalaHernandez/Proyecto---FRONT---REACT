@@ -49,7 +49,7 @@ class EditarUsuario extends Component{
         }
         console.log(this.usuarioId)
         console.log(usuario)
-        axios.put("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/update/"+this.usuarioId,usuario).then(
+        axios.put("http://34.16.137.107:80//api/usuario/update/"+this.usuarioId,usuario).then(
             res =>{
                 this.setState({
                     status:"success"
