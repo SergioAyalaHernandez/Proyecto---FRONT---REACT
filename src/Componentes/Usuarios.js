@@ -15,7 +15,7 @@ class Usuarios extends Component{
     }
 
     getUsuarios = () =>{
-        axios.get("http://34.16.137.107:80//api/usuario/listar").then(
+        axios.get("http://34.16.137.107:80/api/usuario/listar").then(
             res => {
                 console.log(res.data.doc);
                 this.setState({
@@ -38,7 +38,7 @@ class Usuarios extends Component{
           .then((willDelete) => {
             if (willDelete) {
               
-              axios.delete("https://proyecto-back-nodejs-production.up.railway.app/api/usuario/delete/"+id).then(
+              axios.delete("http://34.16.137.107/api/usuario/delete/"+id).then(
                 res => {
                     this.setState({
                         status:"deleted"
