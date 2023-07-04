@@ -34,7 +34,7 @@ class GuardarCarro extends Component{
         console.log(this.name.current.value);
         this.changeState();
         console.log(this.state.car);
-        axios.post("http://34.16.137.107:80//api/car/save",this.state.car).then(res=>{ 
+        axios.post("http://34.16.137.107:80/api/car/save",this.state.car).then(res=>{ 
             this.setState({
                 status:"success"
             })

@@ -16,7 +16,7 @@ class Cars extends Component{
     }
 
     getCar = () =>{
-        axios.get("http://34.16.137.107:80/api/car/listar").then(res => {
+        axios.get("http://34.16.137.107/api/car/listar").then(res => {
                 console.log(res.data.doc);
                 this.setState({
                     car:res.data.doc

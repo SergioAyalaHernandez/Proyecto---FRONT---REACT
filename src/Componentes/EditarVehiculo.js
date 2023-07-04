@@ -58,7 +58,7 @@ class EditarVehiculo extends Component{
         }
         console.log("acá  "+this.carId)
         console.log(car)
-        axios.put("https://proyecto-back-nodejs-production.up.railway.app/api/car/update/"+this.carId,car).then(
+        axios.put("http://34.16.137.107/api/car/update/"+this.carId,car).then(
             res =>{
                 this.setState({
                     status:"success"
