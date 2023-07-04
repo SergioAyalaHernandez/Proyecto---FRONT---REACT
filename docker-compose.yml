@@ -1,43 +1,16 @@
 version: '3'
 
 services:
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - '3000:3000'
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_URL=mongodb://mongo:27017/mydatabase
-    restart: unless-stopped
-    networks:
-      - app-network
-
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - '80:80'
+      - '3000:3000'  # Redirecciona el puerto 3000 del contenedor al puerto 3000 del host
     restart: unless-stopped
-    networks:
-      - app-network
-
-  mongo:
-    image: mongo
-    restart: always
-    ports:
-      - '27017:27017'
-    volumes:
-      - mongo-data:/data/db
     networks:
       - app-network
 
 networks:
   app-network:
     driver: bridge
-
-volumes:
-  mongo-data:
