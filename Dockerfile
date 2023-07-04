@@ -1,29 +1,21 @@
-# Stage 1: Construir la aplicación React
-FROM node:14 as build
+# Usa la imagen base de Node.js
+FROM node:latest
 
-WORKDIR /app
+# Establece el directorio de trabajo en la carpeta de la aplicación
+WORKDIR /usr/src/app
 
-# Copiar el package.json y package-lock.json para instalar las dependencias
+# Copia el archivo package.json y package-lock.json a la imagen
 COPY package*.json ./
 
-# Instalar las dependencias
+# Instala las dependencias del proyecto
 RUN npm install
 
-# Copiar el resto de los archivos del proyecto
+# Copia el resto de los archivos de la aplicación a la imagen
 COPY . .
 
-# Construir la aplicación React
-RUN npm run build
+# Expone el puerto en el que se ejecuta la aplicación
+EXPOSE 3000
 
-# Stage 2: Servir la aplicación construida con Nginx
-FROM nginx:latest
+# Ejecuta el comando npm start al iniciar el contenedor
+CMD ["npm", "start"]
 
-# Copiar los archivos construidos del Stage 1 al directorio de trabajo de Nginx
-COPY --from=build /app/build /usr/share/nginx/html
-
-# Remplazar la configuración predeterminada de Nginx para exponer el puerto 80
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d
-
-# Comando para iniciar el servidor de Nginx
-CMD ["nginx", "-g", "daemon off;"]
