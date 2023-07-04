@@ -34,7 +34,7 @@ class AgregarReserva extends Component{
        };
 
     getCar = (id) => {
-        axios.get("http://34.16.137.107:80/"+id).then(res =>{
+        axios.get("http://34.125.204.221:80/"+id).then(res =>{
                 this.setState({                    
                     car:res.data.usuario,
                     car2:res.data.usuario
@@ -57,7 +57,7 @@ class AgregarReserva extends Component{
 
         }
 
-        axios.put("http://34.16.137.107:80/"+this.carId,car).then(
+        axios.put("http://34.125.204.221:80/"+this.carId,car).then(
             res =>{
                 this.setState({
                     status:"success"

@@ -16,7 +16,7 @@ class Cars extends Component{
     }
 
     getCar = () =>{
-        axios.get("http://34.16.137.107/api/car/listar").then(res => {
+        axios.get("http://34.125.204.221/api/car/listar").then(res => {
                 console.log(res.data.doc);
                 this.setState({
                     car:res.data.doc
@@ -36,7 +36,7 @@ class Cars extends Component{
           })
           .then((willDelete) => {
             if (willDelete) {
-                axios.delete("http://34.16.137.107/api/car/delete/"+id).then(
+                axios.delete("http://34.125.204.221:80/api/car/delete/"+id).then(
             res => {
                 this.setState({
                     status:"deleted"

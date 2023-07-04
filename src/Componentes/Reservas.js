@@ -15,7 +15,7 @@ class Reservas extends Component{
     }
 
     getUsuarios = () =>{
-        axios.get("http://34.16.137.107:80/api/reservation/listar").then(
+        axios.get("http://34.125.204.221:80/api/reservation/listar").then(
             res => {
                 console.log(res.data.doc);
                 this.setState({
@@ -38,7 +38,7 @@ class Reservas extends Component{
           .then((willDelete) => {
             if (willDelete) {
               
-              axios.delete("http://34.16.137.107:80/api/usuario/delete/"+id).then(
+              axios.delete("http://34.125.204.221:80/api/usuario/delete/"+id).then(
                 res => {
                     this.setState({
                         status:"deleted"

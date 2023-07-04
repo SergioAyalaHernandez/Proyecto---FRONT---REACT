@@ -32,7 +32,7 @@ class EditarVehiculo extends Component{
     };
 
     getCar = (id) => {
-        axios.get("http://34.16.137.107:80/api/car/mostrar/"+id).then(res =>{
+        axios.get("http://34.125.204.221:80/api/car/mostrar/"+id).then(res =>{
                 this.setState({                    
                     car:res.data.usuario,
                     car2:res.data.usuario
@@ -58,7 +58,7 @@ class EditarVehiculo extends Component{
         }
         console.log("acá  "+this.carId)
         console.log(car)
-        axios.put("http://34.16.137.107/api/car/update/"+this.carId,car).then(
+        axios.put("http://34.125.204.221/api/car/update/"+this.carId,car).then(
             res =>{
                 this.setState({
                     status:"success"
