@@ -15,14 +15,15 @@ COPY . .
 # Construir la aplicación React
 RUN npm run build
 
-# Stage 2: Servir la aplicación construida
+# Stage 2: Servir la aplicación construida con Nginx
 FROM nginx:latest
 
 # Copiar los archivos construidos del Stage 1 al directorio de trabajo de Nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Exponer el puerto 80 para acceder a la aplicación
-EXPOSE 3000
+# Remplazar la configuración predeterminada de Nginx para exponer el puerto 80
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
 
 # Comando para iniciar el servidor de Nginx
 CMD ["nginx", "-g", "daemon off;"]
